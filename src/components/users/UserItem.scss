@@ -1,0 +1,32 @@
+.card {
+    min-width: 300px;
+    width: 340px;
+    padding: 1rem;
+    margin: .5rem;
+    background-color: #fff8dc;
+    border: 1px solid rgb(231, 231, 231);
+    -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.04);
+    -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.04);
+    box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.04);
+}
+
+.round-img {
+    border-radius: 50%;
+    height: 60px;
+}
+
+h3 {
+    padding-bottom: 10px;
+}
+
+.btn {
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 0 6px;
+    font-size: 1.7rem;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #575757;
+    }
+}
