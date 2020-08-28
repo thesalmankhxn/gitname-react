@@ -1,7 +1,8 @@
 import React from 'react';
 import './UserItem.scss';
+import propTypes from 'prop-types';
 
-const UserItem = ({user : { login, avatar_url, html_url }}) => {
+const UserItem = ({ user : { login, avatar_url, html_url }}) => {
 
     // const { login, avatar_url, html_url } = props.user;
     return (
@@ -15,6 +16,10 @@ const UserItem = ({user : { login, avatar_url, html_url }}) => {
             </div>
         </div>
     );
+};
+
+UserItem.protoTypes = {
+    user: propTypes.object.isRequired,
 }
 
 export default UserItem;

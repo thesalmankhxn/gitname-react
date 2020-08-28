@@ -3,14 +3,14 @@ import propTypes from 'prop-types';
 
 import "./NavBar.scss";
 
-const NavBar = (props) => {
+const NavBar = ({ icon, title}) => {
 
 
 return (
     <div className="navbar">
         <h1>
-            <i className={props.icon}></i>
-            {props.title}
+            <i className={icon}></i>
+            {title}
         </h1>
     </div>
 );
