@@ -2,15 +2,28 @@ import React, { Component } from 'react';
 import './Search.scss';
 
 class Search extends Component {
+    state = {
+        text: '',
+    };
+
+    onChange = (e) => this.setState({ [e.target.name]: e.target.value }); 
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state.text);
+    }
+
     render() {
         return (
             <div className='form-container text-center'>
-                <form className='form'>
+                <form onSubmit={this.onSubmit} className='form'>
                     <input 
                         type="text" 
                         name='text' 
                         placeholder='Search Users...' 
                         className='text-input'
+                        value={this.state.text}
+                        onChange={this.onChange}
                     />
                     <input 
                         type="submit" 
@@ -23,4 +36,4 @@ class Search extends Component {
     }
 }
 
-export default Search
+export default Search;
