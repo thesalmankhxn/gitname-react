@@ -33,12 +33,14 @@ class App extends Component {
     this.setState( { users: res.data.items, loading: false } );
   }
 
+  clearUsers = () => this.setState({ users: [] });
+
   render() {
     return (
       <div className="App">
         <NavBar />
         <div className="container">
-          <Search searchUsers={this.searchUsers} />
+          <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} />
           <Users loading={this.state.loading} users={this.state.users}/>
         </div>
       </div>

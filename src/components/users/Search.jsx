@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import './Search.scss';
+import propTypes from 'prop-types';
 
 class Search extends Component {
     state = {
         text: '',
     };
+
+    static propTypes = {
+        searchUsers: propTypes.func.isRequired,
+        clearUsers: propTypes.func.isRequired,
+    }
 
     onChange = (e) => this.setState({ [e.target.name]: e.target.value }); 
 
@@ -12,7 +18,7 @@ class Search extends Component {
         e.preventDefault();
         this.props.searchUsers(this.state.text);
         this.setState({ text: '' });
-;    }
+    }
 
     render() {
         return (
@@ -32,6 +38,7 @@ class Search extends Component {
                         className='btn-submit' 
                     />
                 </form>
+                <button className='btn-clear' onClick={this.props.clearUsers} ><i className="fas fa-trash"></i></button>
             </div>
         )
     }
