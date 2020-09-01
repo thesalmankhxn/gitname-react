@@ -13,18 +13,22 @@
     font-weight: 400;
     font-size: 1rem;
     border-radius: 50px 0 0 50px;
-    border: 1px solid rgb(196, 196, 196);
+    border: 1px solid #c4c4c4;
 }
 
 .btn-submit {
     height: 40px;
     outline: none;
-    border: 1px solid rgb(196, 196, 196);
+    border: 1px solid #c4c4c4;
     border-radius: 0 50px 50px 0;
     padding: 10px;
     font-weight: 700;
     font-size: 1rem;
     background-color: cornsilk;
+
+    &:hover {
+        background-color: #fff3c5;
+    }
 }
 
 .btn-clear {
