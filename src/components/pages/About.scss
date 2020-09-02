@@ -1,0 +1,19 @@
+.about {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 20px 50px;
+    border: 1px solid #d8d8d8;
+    width: fit-content;
+    border-radius: 4px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(232,232,232,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(232,232,232,1);
+    box-shadow: 10px 10px 5px 0px rgba(232,232,232,1);
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+}
