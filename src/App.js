@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.scss';
 
 import NavBar from "./components/layout/NavBar";
 import Users from './components/users/Users';
+import User from './components/users/User';
 import Search from './components/users/Search';
 import Alert from './components/layout/Alert';
 import About from './components/pages/About';
@@ -16,7 +17,7 @@ class App extends Component {
     user: {},
     loading: false,
     alert: null
-  }
+  };
 
   // async componentDidMount() {
   //   this.setState( { loading: true } );
@@ -59,7 +60,7 @@ class App extends Component {
   }
 
   render() {
-    const { loading, users } = this.state;
+    const { loading, user,users } = this.state;
     return (
       <Router>
         <div className="App">
@@ -69,7 +70,7 @@ class App extends Component {
             <Switch>
               <Route
                 exact
-                path="/"
+                path='/'
                 render={props => (
                   <Fragment>
                     <Search searchUsers={this.searchUsers}
@@ -78,12 +79,19 @@ class App extends Component {
                       setAlert={this.setAlert}
                     />
                     <Users loading={loading} users={users} />
+                    <Route 
+                    exact
+                    path='/user/:login'
+                    render={props => (
+                      <User { ...props } getUser={this.getUser} user={user} loading={loading} />
+                    )}
+                    />
                   </Fragment>
                 )}
               />
               <Route
                 exact
-                path="/about" 
+                path='/about'
                 component={About}
               />
             </Switch>

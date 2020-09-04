@@ -1,6 +1,7 @@
 import React from 'react';
 import './UserItem.scss';
 import propTypes from 'prop-types';
+import Links, { Link } from 'react-router-dom';
 
 const UserItem = ({ user : { login, avatar_url, html_url }}) => {
 
@@ -10,9 +11,9 @@ const UserItem = ({ user : { login, avatar_url, html_url }}) => {
             <img src={avatar_url} alt="" className="round-img" />
             <h3>{login}</h3>
             <div>
-                <a href={html_url} className="btn">
+                <Link to={`/user/${login}`} className="btn">
                     +
-                    </a>
+                    </Link>
             </div>
         </div>
     );
